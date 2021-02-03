@@ -1,18 +1,11 @@
 // tslint:disable:no-console
 
 /**
- * This is just a placeholder function for this library.
- * @param message Message to print.
- */
-export function logger(message: string) {
-    console.log('[FL LOGGS]: ' + message);
-}
-
-/**
  * LogType enum for the types of logs.
  */
 export enum LogType {
     Log = 'Log',
+    DbLog = 'Database Log',
     Err = 'Error',
     DbErr = 'Database Error',
     HttpErr = 'Http Server Error',
@@ -37,6 +30,11 @@ export class Logger {
 
     /* General function to log with a specific type. */
     log(message: string) {
+        this.custom(LogType.Log, message);
+    }
+    
+    /* General function for database logging. */
+    dbLog(message: string) {
         this.custom(LogType.Log, message);
     }
 
