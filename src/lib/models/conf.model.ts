@@ -6,6 +6,7 @@ export interface MicroserviceConfig {
     name: string;
     serverConfig: ServerConfig;
     dbConfig: DbConfig;
+    jwt_secret: string;
 }
 
 /**
@@ -41,16 +42,4 @@ export interface KafkaConsumerConfig {
 export interface KafkaProducerConfig {
     hosts: string[];
     clientId: string;
-}
-
-/**
- * Environment config.
- */
-export interface EnvironmentConfig {
-    MS_NAME: string | undefined;
-    HTTP_PORT: string | undefined;
-    DB_HOST: string | undefined;
-    DB_PORT: string | undefined;
-    DB_USERNAME: string | undefined;
-    DB_PASSWORD: string | undefined;
 }

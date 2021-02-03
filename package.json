@@ -7,7 +7,7 @@
     "build": "rm -rf ./dist && tsc",
     "dev:test": "nodemon --watch . --ext ts --exec \"mocha -r ts-node/register src/**/*.test.ts\"",
     "ci:test": "mocha -r ts-node/register src/**/*.test.ts",
-    "link:locally": "npm link"
+    "link:locally": "npm run build && npm link"
   },
   "author": "Dumitru Vulpe",
   "license": "ISC",

@@ -6,7 +6,6 @@ import {
     DbConfig,
     KafkaConsumerConfig,
     KafkaProducerConfig,
-    EnvironmentConfig
 } from './lib/models/conf.model';
 
 export {
@@ -16,6 +15,5 @@ export {
     DbConfig,
     KafkaConsumerConfig,
     KafkaProducerConfig,
-    EnvironmentConfig
 };
 
