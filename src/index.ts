@@ -1,19 +1,15 @@
-import { logger } from './lib/logger';
+// import {
+//     ServerConfig,
+//     DbConfig,
+//     KafkaConsumerConfig,
+//     KafkaProducerConfig,
+// } from './lib/models/conf.model';
 
-import {
-    MicroserviceConfig,
-    ServerConfig,
-    DbConfig,
-    KafkaConsumerConfig,
-    KafkaProducerConfig,
-} from './lib/models/conf.model';
-
-export {
-    logger,
-    MicroserviceConfig,
-    ServerConfig,
-    DbConfig,
-    KafkaConsumerConfig,
-    KafkaProducerConfig,
-};
+// export {
+//     MicroserviceConfig,
+//     ServerConfig,
+//     DbConfig,
+//     KafkaConsumerConfig,
+//     KafkaProducerConfig,
+// };
 

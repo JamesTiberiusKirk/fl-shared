@@ -1,15 +1,4 @@
 /**
- * Config for an entire microservice.
- * Sub-configs are optional to enable the once needed.
- */
-export interface MicroserviceConfig {
-    name: string;
-    serverConfig: ServerConfig;
-    dbConfig: DbConfig;
-    jwt_secret: string;
-}
-
-/**
  * Config interface for HTTP servers.
  */
 export interface ServerConfig {
