@@ -1,6 +1,6 @@
 import * as Logger from '../Logger';
 
-async function stopHandler() {
+function stopHandler() {
     Logger.err('Stopped forcefully, not all connection was closed');
     process.exit(1);
 }
