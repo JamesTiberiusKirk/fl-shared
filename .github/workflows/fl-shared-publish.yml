@@ -12,8 +12,7 @@ env:
 
 defaults:
   run:
-    working-directory: ./fitness-logger/fl-shared/
-
+    working-directory: ./
 jobs:
   build:
     runs-on: ubuntu-latest
