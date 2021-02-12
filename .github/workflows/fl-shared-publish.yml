@@ -38,7 +38,7 @@ jobs:
           scope: '@jamestiberiuskirk'
 
       - run: npm install
-      - run: npm run ci:test
+      # - run: npm run ci:test
       - run: npm run build
       - run: npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
         env:
