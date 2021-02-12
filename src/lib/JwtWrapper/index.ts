@@ -55,7 +55,7 @@ function decodeJwt(token: string): JwtPayload | Error {
     return jwtPayload;
 }
 
-function signJwt(name: string): string {
+export function signJwt(name: string): string {
     const jwtSecret = process.env.JWT_SECRET ?? '';
     const jwtPayload = {
         username: name,
