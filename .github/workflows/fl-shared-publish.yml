@@ -14,20 +14,7 @@ defaults:
   run:
     working-directory: ./
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 15
-
-      - run: npm install
-      #- run: npm run ci:test
-      - run: npm run build
-
-  publish-gpr:
-    needs: build
+  build-publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
