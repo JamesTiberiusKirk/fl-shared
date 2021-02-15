@@ -18,6 +18,13 @@ export interface JwtPayload {
     iss: string,
 }
 
+/**
+ * Express middleware to authenticate the user and pass the jwt
+ *   payload to next function.
+ * @param req
+ * @param res
+ * @param next
+ */
 export function microserviceAuthMiddleware(req: Request, res: Response, next: NextFunction) {
     const uJwt = req.header('access-token');
     if (!uJwt) return res.status(401).send(JwtStatus.JwtMissing);
