@@ -61,12 +61,3 @@ function decodeJwt(token: string): JwtPayload | Error {
     }
     return jwtPayload;
 }
-
-export function signJwt(name: string): string {
-    const jwtSecret = process.env.JWT_SECRET ?? '';
-    const jwtPayload = {
-        username: name,
-        roles: ['microservice']
-    }
-    return jwt.sign(jwtPayload, jwtSecret);
-}

@@ -11,6 +11,7 @@ export class MicroserviceEnvConfig {
     serverConfig: ServerConfig;
     dbConfig: DbConfig;
     jwtSecret: string;
+    flApiHost: string;
 
     constructor() {
         Logger.log('Getting env variables');
@@ -19,7 +20,12 @@ export class MicroserviceEnvConfig {
         this.serverConfig = getServerConfig();
         this.dbConfig = getDbConfig();
         this.jwtSecret = getJwtSecret();
+        this.flApiHost = getFlApiHost();
     }
+}
+
+export function getFlApiHost(): string{
+    return process.env.FL_API_HOST ?? '';
 }
 
 export function getServerConfig(): ServerConfig {
@@ -56,6 +62,7 @@ declare global {
             DB_PASSWORD: string | undefined;
             HTTP_PORT: string | undefined;
             JWT_SECRET: string;
+            FL_API_HOST: string | undefined;
         }
     }
 }

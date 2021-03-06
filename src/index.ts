@@ -4,5 +4,14 @@ import * as Logger from './lib/Logger';
 import { initStopHandler } from './lib/ProcSigHandlers';
 import * as JwtWrapper from './lib/JwtWrapper';
 import * as Misc from './lib/misc';
+import FlApi from './lib/FlApi';
 
-export { Conf, Env, Logger, JwtWrapper, initStopHandler, Misc }
+export {
+    Conf,
+    Env,
+    Logger,
+    JwtWrapper,
+    initStopHandler,
+    Misc,
+    FlApi
+}
