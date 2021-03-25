@@ -36,7 +36,7 @@ export default class FlApi {
         let link = `${this.host}${Paths.GetTypesForUser}?user_id=${userId}`;
         if (tpId) link += `&tp_id=${tpId}`;
         Logger.log('FlApi: '+ link);
-        return axios.delete(link, config);
+        return axios.get(link, config);
     }
 
     /**
@@ -51,7 +51,7 @@ export default class FlApi {
         };
         const link = `${this.host}${Paths.TrackingPoints}?tg_id=${tgId}`;
         Logger.log('FlApi: '+ link);
-        return axios.get(link, config);
+        return axios.delete(link, config);
     }
 
     public auth() {
