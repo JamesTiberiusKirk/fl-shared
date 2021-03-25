@@ -1,6 +1,6 @@
 {
   "name": "@jamestiberiuskirk/fl-shared",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Shared libraries for fitness logger.",
   "main": "dist/index.js",
   "scripts": {
