@@ -4,7 +4,7 @@ import * as Logger from '../Logger';
 
 enum Paths {
     GetTypesForUser = '/types/',
-    TrackingGroups = '/tracking/groups',
+    TrackingGroups = '/tracking/groups/',
 };
 
 
