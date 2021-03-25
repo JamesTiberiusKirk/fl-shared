@@ -4,7 +4,7 @@ import * as Logger from '../Logger';
 
 enum Paths {
     GetTypesForUser = '/types/',
-    Tracking = '/tracking/points/',
+    TrackingPoints = '/tracking/points/',
 };
 
 
@@ -49,7 +49,7 @@ export default class FlApi {
         const config = {
             headers: this.authHeaders
         };
-        const link = `${this.host}${Paths.TrackingGroups}?tg_id=${tgId}`;
+        const link = `${this.host}${Paths.TrackingPoints}?tg_id=${tgId}`;
         Logger.log('FlApi: '+ link);
         return axios.get(link, config);
     }
