@@ -3,7 +3,8 @@ import * as jwt from 'jsonwebtoken';
 import * as Logger from '../Logger';
 
 enum Paths {
-    GetTypesForUser = '/types/'
+    GetTypesForUser = '/types/',
+    TrackingGroups = '/tracking/groups',
 };
 
 
@@ -34,6 +35,21 @@ export default class FlApi {
         };
         let link = `${this.host}${Paths.GetTypesForUser}?user_id=${userId}`;
         if (tpId) link += `&tp_id=${tpId}`;
+        Logger.log('FlApi: '+ link);
+        return axios.get(link, config);
+    }
+
+    /**
+     * deleteTpsByTgId deleted all of the tp with the apropriate
+     *  tgId.
+     *
+     * @param id of the tracking group to be deleted.
+     */
+    public deleteTpsByTgId(tgId: string){
+        const config = {
+            headers: this.authHeaders
+        };
+        const link = `${this.host}${Paths.TrackingGroups}?tg_id=${tgId}`;
         Logger.log('FlApi: '+ link);
         return axios.get(link, config);
     }
