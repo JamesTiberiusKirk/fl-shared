@@ -4,7 +4,7 @@ import * as Logger from '../Logger';
 
 enum Paths {
     GetTypesForUser = '/types/',
-    TrackingPoints = '/tracking/point/',
+    TrackingPoint = '/tracking/point/',
 };
 
 
@@ -35,7 +35,7 @@ export default class FlApi {
         };
         let link = `${this.host}${Paths.GetTypesForUser}?user_id=${userId}`;
         if (tpId) link += `&tp_id=${tpId}`;
-        Logger.log('FlApi: '+ link);
+        Logger.log('FlApi: GET '+ link);
         return axios.get(link, config);
     }
 
@@ -49,8 +49,8 @@ export default class FlApi {
         const config = {
             headers: this.authHeaders
         };
-        const link = `${this.host}${Paths.TrackingPoints}?tg_id=${tgId}`;
-        Logger.log('FlApi: '+ link);
+        const link = `${this.host}${Paths.TrackingPoint}?tg_id=${tgId}`;
+        Logger.log('FlApi: DELETE  '+ link);
         return axios.delete(link, config);
     }
 
