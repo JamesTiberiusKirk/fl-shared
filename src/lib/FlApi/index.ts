@@ -3,7 +3,7 @@ import * as jwt from 'jsonwebtoken';
 import * as Logger from '../Logger';
 
 enum Paths {
-    GetTypesForUser = '/types/',
+    TrackingPointType = '/types/',
     TrackingPoint = '/tracking/point/',
 };
 
@@ -33,7 +33,7 @@ export default class FlApi {
         const config = {
             headers: this.authHeaders
         };
-        let link = `${this.host}${Paths.GetTypesForUser}?user_id=${userId}`;
+        let link = `${this.host}${Paths.TrackingPointType}?user_id=${userId}`;
         if (tpId) link += `&tp_id=${tpId}`;
         Logger.log('FlApi: GET '+ link);
         return axios.get(link, config);
@@ -54,17 +54,31 @@ export default class FlApi {
         return axios.delete(link, config);
     }
 
+    /**
+     * Set authHeaders.
+     */
     public auth() {
         Logger.log('FlApi: Generating auth headers');
         this.authHeaders = this.genAuthHeaders(this.signJwt());
     }
 
+
+    /**
+     * Generate auth header.
+     *
+     * @param signedJwt jwt string.
+     */
     private genAuthHeaders(signedJwt: string) {
         return {
             'access-token': signedJwt
         };
     }
 
+    /**
+     * Sign the jwt token with env variable.
+     *
+     * @return string of jwt.
+     */
     private signJwt(): string {
         const jwtSecret = process.env.JWT_SECRET ?? '';
         const jwtPayload = {
